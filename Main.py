@@ -11,7 +11,18 @@ class DoublyCircularLinkedList:
         self.count = 0
 
     def add_at_tail(self, data) -> bool:
-        # Write code here
+        t = self.head
+        n = Node(data)
+        if t == None:
+            self.head = n
+        else:
+            while t.next != None:
+                t = t.next
+            t.next = n
+            n.previous = t
+            n.next = self.head
+            self.head.previous = n
+        
 
     def add_at_head(self, data) -> bool:
         # Write code here
